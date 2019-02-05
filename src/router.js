@@ -8,13 +8,13 @@ const {
 const router = (req, res) => {
   const endpoint = req.url;
   if (endpoint === "/") {
-    handleHome(request, response);
+    handleHome(req, res);
   } else if (endpoint.includes("/public/")) {
-    handleStatic(request, response, endpoint);
+    handleStatic(req, res, endpoint);
   } else if (endpoint === "/search") {
-    handleImg(request, response, endpoint);
+    handleImg(req, res, endpoint);
   } else {
-    handleNotFoundError(request, response);
+    handleNotFoundError(req, res);
   }
 };
 

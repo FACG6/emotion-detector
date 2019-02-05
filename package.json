@@ -1,0 +1,31 @@
+{
+  "name": "emotion-detector",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape ./test/test.js",
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACG6/emotion-detector.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACG6/emotion-detector/issues"
+  },
+  "homepage": "https://github.com/FACG6/emotion-detector#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9",
+    "supertest": "^3.4.2",
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.2"
+  }
+}

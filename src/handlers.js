@@ -11,18 +11,6 @@ const handleHome = (req, res) => {
       res.write(file);
       res.end();
     }
-
-
-
-
-
-
-
-
-
-
-
-
   });
 };
 
@@ -42,76 +30,20 @@ const handleStatic = (req, res, endpoint) => {
             res.end()
           }
       })
-
-
-
-
-
-
-
-
-
 };
 
 const handleImg = () => {};
 
 const handleNotFoundError = () => {
-
-
     response.writeHead(404,{"Content-Type": "text/html"});
       response.write("<h1>404 Page not found !!!</h1>");
       response.end();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
 };
 
 const handleServerError = (req, res) => {
   res.writeHead(500, {'content-type':'text/html'});
   res.write('<h1 style="text-align:center;font-weight:bold;font-family:cursive">Internal Server Error</h1>')
   res.end();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 module.exports = {

@@ -17,7 +17,7 @@ tape('testing handleHomePage, handleServerError', t => {
     supertest(router)
     .get('/public/not-existing-file.ext')
     .expect(500)
-    .expect('content-type', 'text/html')
+    .expect('content-type', 'text/html')    
     .end((err, res) => {
         t.error('Error: ' + err);
     });

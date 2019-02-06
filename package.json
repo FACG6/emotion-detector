@@ -22,8 +22,10 @@
     "url": "https://github.com/FACG6/emotion-detector/issues"
   },
   "homepage": "https://github.com/FACG6/emotion-detector#readme",
+  "dependencies": {
+    "dotenv": "^6.2.0"
+  },
   "devDependencies": {
-    "dotenv": "^6.2.0",
     "nodemon": "^1.18.9",
     "request": "^2.88.0",
     "supertest": "^3.4.2",

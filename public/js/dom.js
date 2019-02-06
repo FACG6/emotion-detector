@@ -5,27 +5,31 @@ const resultImg = document.querySelector(".result--img");
 const resultChart = document.querySelector(".result--chart");
 
 form.addEventListener("submit", event => {
-    resultImg.innerHTML=''
-    resultChart.innerHTML=''
-  const imageUrl = input.value;
   event.preventDefault();
+  resultImg.innerHTML = "";
+  resultChart.innerHTML = "";
+  const imageUrl = input.value;
+  if (!imageUrl) {
+    resultChart.appendChild(document.createTextNode("Enter a valid Url"));
+    return;
+  }
   fetch("POST", "/search", imageUrl, renderData);
+  input.value = "";
 });
 const renderData = (error, emotionObj, imageUrl) => {
-
   if (error) {
+    console.error(error);
+    resultChart.appendChild(document.createTextNode(error));
   } else {
-    console.log(emotionObj);
     const img = document.createElement("img");
     img.src = imageUrl;
     img.classList.add("imgFace");
     resultImg.appendChild(img);
-    const divChart = document.createElement("div");
-    resultChart.appendChild(divChart)
-    emotionObj.forEach(face => {
-        const ul = document.createElement("ul");
+    emotionObj.forEach((face, i) => {
+      const divChart = document.createElement("div");
+      const ul = document.createElement("ul");
       const divFace = document.createElement("div");
-
+      divChart.classList.add("margin");
       divFace.classList.add("divFace");
 
       divFace.style.top = `${face.faceRectangle.top}px`;
@@ -37,7 +41,8 @@ const renderData = (error, emotionObj, imageUrl) => {
 
       const resultText = face.scores;
       const keys = Object.keys(resultText);
-
+      const h1 = document.createElement("h1");
+      h1.innerText = `face:(${i + 1})`;
       keys.forEach((e, i) => {
         const li = document.createElement("li");
         li.innerText += `${e} :`;
@@ -54,6 +59,8 @@ const renderData = (error, emotionObj, imageUrl) => {
         li.appendChild(div1);
         ul.appendChild(li);
       });
+      resultChart.appendChild(divChart);
+      divChart.appendChild(h1);
       divChart.appendChild(ul);
     });
   }

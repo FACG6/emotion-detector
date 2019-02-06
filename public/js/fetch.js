@@ -5,7 +5,7 @@ const fetch = (method, url, value, callback) => {
       if (xhr.status === 200) {
         if (JSON.parse(xhr.responseText))
           callback(null, JSON.parse(xhr.response), value);
-        else callback(new Error("Error"));
+        else callback(new Error("Enter a valid Url"));
       } else callback(new Error("Api is not responding"));
   };
   xhr.open(method, url);

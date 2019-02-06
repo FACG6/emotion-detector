@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/css/style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <nav>
-        <form id="form">
-            <input type="text" placeholder="Enter your Url" id="input">
-            <input type="submit" value="Detect">
-            <input type="file" id="file">
+  <body>
+    <header>
+      <nav class="nav">
+        <form class="form">
+          <input type="text" placeholder="Enter your Url" class="form--input" />
+          <input type="submit" value="Detect" />
         </form>
-    </nav>
-
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="result">
+          <div class="result--img"></div>
+          <div class="result--chart"></div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
     <script src="public/js/fetch.js"></script>
     <script src="public/js/dom.js"></script>
-</body>
-
+  </body>
 </html>

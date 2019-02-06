@@ -1,0 +1,42 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.nav {
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  height: 50px;
+  align-items: center;
+}
+.result {
+  display: flex;
+  padding-top: 100px;
+  justify-content: space-evenly;
+}
+.result--img {
+  position: relative;
+}
+.imgFace {
+  height: 500px;
+}
+.divFace {
+  position: absolute;
+  border: 3px black solid;
+}
+.gray {
+  width: 100px;
+  height: 20px;
+  background-color: gray;
+}
+.colorDiv {
+  background-color: red;
+  height: 20px;
+}
+span {
+  font-size: 10px;
+}

@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const request = require('request');
 
-const handleHome = (req, res) => {  
+const handleHome = (req, res) => {
   const homePagePath = path.join(__dirname, '..', 'public', 'index.html');
   fs.readFile(homePagePath, (error, file) => {
     if (error) {
@@ -53,9 +53,8 @@ const handleImg = (req, res) => {
       if (error)
         handleServerError(req, res);
       else
-        console.log('body : ', body)
+        res.end(body)
     })
-    res.end();
   })
 };
 

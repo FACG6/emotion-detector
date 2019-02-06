@@ -3,7 +3,10 @@ const fetch = (method, url, value, callback) => {
     xhr.onreadystatechange = () => {
         if (xhr.readyState === 4)
             if (xhr.status === 200)
-                callback(null, JSON.parse(xhr.responseText));
+                if (JSON.parse(xhr.responseText))
+                    callback(null, JSON.parse(xhr.responseText));
+                else
+                    callback(new Error('Error'));
             else
                 callback(new Error('Api is not responding'));
     }

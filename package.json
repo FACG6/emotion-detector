@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/FACG6/emotion-detector#readme",
   "dependencies": {
-    "dotenv": "^6.2.0"
+    "dotenv": "^6.2.0",
+    "request": "^2.88.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.9",
-    "request": "^2.88.0",
     "supertest": "^3.4.2",
     "tap-spec": "^5.0.0",
     "tape": "^4.9.2"

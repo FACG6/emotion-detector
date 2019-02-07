@@ -21,12 +21,21 @@
 .result--img {
   position: relative;
 }
-.imgFace {
+.form--input {
+  height: 35px;
+  width: 400px;
+}
+.result--chart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
   height: 500px;
+  width: 50%;
 }
 .divFace {
   position: absolute;
-  border: 3px black solid;
+  border: 3px #00abec solid;
 }
 .gray {
   width: 100px;
@@ -39,4 +48,14 @@
 }
 span {
   font-size: 10px;
+}
+.margin {
+  margin-bottom: 20px;
+}
+.detect {
+  width: 70px;
+  margin-left: 20px;
+}
+.form {
+  display: flex;
 }

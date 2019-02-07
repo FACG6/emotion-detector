@@ -5,15 +5,22 @@ const resultImg = document.querySelector(".result--img");
 const resultChart = document.querySelector(".result--chart");
 
 form.addEventListener("submit", event => {
-  resultImg.innerHTML = ''
-  resultChart.innerHTML = ''
   const imageUrl = input.value;
   event.preventDefault();
+  resultImg.innerHTML = "";
+  resultChart.innerHTML = "";
+  const imageUrl = input.value;
+  if (!imageUrl) {
+    resultChart.appendChild(document.createTextNode("Enter a valid Url"));
+    return;
+  }
   fetch("POST", "/search", imageUrl, renderData);
+  input.value = "";
 });
 const renderData = (error, emotionObj, imageUrl) => {
-
   if (error) {
+    console.error(error);
+    resultChart.appendChild(document.createTextNode(error));
   } else {
     const img = document.createElement("img");
     const divChart = document.createElement("div");
@@ -57,6 +64,8 @@ const renderData = (error, emotionObj, imageUrl) => {
           li.appendChild(div1);
           ul.appendChild(li);
         });
+        resultChart.appendChild(divChart);
+        divChart.appendChild(h1);
         divChart.appendChild(ul);
       });
     }

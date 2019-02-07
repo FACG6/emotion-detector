@@ -20,6 +20,8 @@
 }
 .result--img {
   position: relative;
+  width: 35%;
+  height: fit-content;
 }
 .form--input {
   height: 35px;
@@ -59,4 +61,8 @@ span {
 }
 .form {
   display: flex;
+}
+
+.imgFace{
+  width: 100%
 }

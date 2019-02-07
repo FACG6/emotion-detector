@@ -5,11 +5,10 @@ const resultImg = document.querySelector(".result--img");
 const resultChart = document.querySelector(".result--chart");
 
 form.addEventListener("submit", event => {
-  const imageUrl = input.value;
   event.preventDefault();
+  const imageUrl = input.value;
   resultImg.innerHTML = "";
   resultChart.innerHTML = "";
-  const imageUrl = input.value;
   if (!imageUrl) {
     resultChart.appendChild(document.createTextNode("Enter a valid Url"));
     return;
@@ -32,7 +31,7 @@ const renderData = (error, emotionObj, imageUrl) => {
     resultChart.appendChild(divChart);
 
     img.onload = () => {
-      emotionObj.forEach(face => {
+      emotionObj.forEach((face, i) => {
         const ul = document.createElement("ul");
         const divFace = document.createElement("div");
 
@@ -47,8 +46,9 @@ const renderData = (error, emotionObj, imageUrl) => {
 
         const resultText = face.scores;
         const keys = Object.keys(resultText);
-
-        keys.forEach((e, i) => {
+        const h1 = document.createElement('h1');
+        h1.innerText = `face:(${i + 1})`
+        keys.forEach(e => {
           const li = document.createElement("li");
           li.innerText += `${e} :`;
           const div1 = document.createElement("div");
@@ -58,7 +58,7 @@ const renderData = (error, emotionObj, imageUrl) => {
           span.classList.add("span");
           div1.classList.add("gray");
           div2.classList.add("colorDiv");
-          div2.style.width = `${Math.round(resultText[e] * 100)}px`;
+          div2.style.width = `${Math.round((resultText[e] * 150))}px`;
           div1.appendChild(div2);
           div2.appendChild(span);
           li.appendChild(div1);
